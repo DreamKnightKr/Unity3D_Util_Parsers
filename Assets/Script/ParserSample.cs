@@ -16,12 +16,14 @@ public class ParserSample : MonoBehaviour {
 
 	void OnGUI()
 	{
-		float fPosX = 20, fPosY = 50, fYInterval = 10;
+		float fPosX = 20, fPosY = 50, fYInterval = 40;
 		int nYPosCount = 0;
 
 		System.DateTime timeStart = System.DateTime.Now;
 		System.TimeSpan timeToSpen;
 
+
+		// CSV...
 		nYPosCount = 0;
 		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 150, 30), "CSV Start"))
 		{
@@ -42,5 +44,30 @@ public class ParserSample : MonoBehaviour {
 			// Show result
 			txtTime.text = "Time = " + timeToSpen.ToString();
 		}
+
+		// JSON...
+		nYPosCount = 2;
+		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 150, 30), "JSON Start"))
+		{
+			SimpleJSON.JSONNode json = null;
+			
+			// Load
+			
+			// Paesing
+			{
+				timeStart = System.DateTime.Now;
+				
+				TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_JSON");
+				json = SimpleJSON.JSONNode.Parse(txt.text);
+
+				timeToSpen = System.DateTime.Now - timeStart;
+
+				Debug.Log(json.ToString());
+			}
+			
+			// Show result
+			txtTime.text = "Time = " + timeToSpen.ToString();
+		}
+
 	}
 }
