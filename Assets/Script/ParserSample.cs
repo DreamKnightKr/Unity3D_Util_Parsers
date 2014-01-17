@@ -30,12 +30,12 @@ public class ParserSample : MonoBehaviour {
 			CSV csv = new CSV("TestCSV.txt");
 
 			// Load
+			TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_CSV");
 
 			// Paesing
 			{
 				timeStart = System.DateTime.Now;
 
-				TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_CSV");
 				csv.Parse(txt.text);
 
 				timeToSpen = System.DateTime.Now - timeStart;
@@ -52,17 +52,41 @@ public class ParserSample : MonoBehaviour {
 			SimpleJSON.JSONNode json = null;
 			
 			// Load
-			
+			TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_JSON");
+
 			// Paesing
 			{
 				timeStart = System.DateTime.Now;
 				
-				TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_JSON");
 				json = SimpleJSON.JSONNode.Parse(txt.text);
 
 				timeToSpen = System.DateTime.Now - timeStart;
 
 				Debug.Log(json.ToString());
+			}
+			
+			// Show result
+			txtTime.text = "Time = " + timeToSpen.ToString();
+		}
+
+		// XML...
+		nYPosCount = 3;
+		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 150, 30), "XML Start"))
+		{
+			XMLParser rParser = new XMLParser();
+			
+			// Load
+			TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_XML");
+
+			// Paesing
+			{
+				timeStart = System.DateTime.Now;
+
+				XMLNode rRootNode = rParser.Parse(txt.text);
+				
+				timeToSpen = System.DateTime.Now - timeStart;
+				
+				rRootNode.Clear();
 			}
 			
 			// Show result
