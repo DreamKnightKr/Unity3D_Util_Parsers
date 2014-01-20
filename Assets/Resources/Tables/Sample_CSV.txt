@@ -156,3 +156,6 @@ uint,string,string,string,string,string,string,string,string,string,string,strin
 154,ui_actlabel_effect_04_B,0,mesh_actlabel_obj,:17,-2.081078E-06:44.92145:6.195244,0:180:180,-1:-1:-1,ui_actlabel_effect_tex_04,Particles/Additive,ui_actlabel_effect_tex_04,0,0,0,0
 155,ui_actlabel_effect_04_F,0,mesh_actlabel_obj,:18,-2.156921E-06:44.92145:5.327698,0:180:0,1:1:1,ui_actlabel_effect_tex_04,Particles/Additive,ui_actlabel_effect_tex_04,0,0,0,0
 156,base,0,mesh_actlabel_obj,:19,-2.260271E-06:-0.8653965:4.145508,0:180:0,3.12:3.12:3.12,0,0,0,0,0,0,0
+
+
+
