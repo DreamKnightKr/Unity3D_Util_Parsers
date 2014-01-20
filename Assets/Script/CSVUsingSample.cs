@@ -19,7 +19,7 @@ public class CSVUsingSample : MonoBehaviour {
 		int nYPosCount = 0;
 		
 		nYPosCount = 0;
-		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 150, 30), "Read/Write Start"))
+		if (GUI.Button(new Rect(fPosX, fPosY + (fYInterval * nYPosCount), 150, 30), "Show Datas"))
 		{
 			CSV csv = new CSV("TestCSV.txt");
 			
@@ -29,8 +29,13 @@ public class CSVUsingSample : MonoBehaviour {
 
 			{
 				// Read
+				foreach(uint i in csv.GetArrayUint("index"))
+				{
+					Debug.Log("Data [" + i +"]\n"
+					          + csv.GetValueString("id", i) + "\n"
+					          + csv.GetValueString("material", i) + "\n");
+				}
 			}
-
-			// Write
 		}
+	}
 }
