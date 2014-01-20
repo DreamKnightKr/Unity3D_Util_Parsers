@@ -32,7 +32,7 @@ public class ParserSample : MonoBehaviour {
 			// Load
 			TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_CSV");
 
-			// Paesing
+			// Parsing
 			{
 				timeStart = System.DateTime.Now;
 
@@ -54,7 +54,7 @@ public class ParserSample : MonoBehaviour {
 			// Load
 			TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_JSON");
 
-			// Paesing
+			// Parsing
 			{
 				timeStart = System.DateTime.Now;
 				
@@ -78,7 +78,7 @@ public class ParserSample : MonoBehaviour {
 			// Load
 			TextAsset txt = Resources.Load<TextAsset>("Tables/Sample_XML");
 
-			// Paesing
+			// Parsing
 			{
 				timeStart = System.DateTime.Now;
 
